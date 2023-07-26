@@ -1,0 +1,43 @@
+#include <DHT.h>
+#define dhtType DHT11
+#define dhtPin A0
+#define moisturePin A1
+#define gasPin A2
+#define pHPin A3
+
+
+DHT dht(dhtPin, dhtType);
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+
+void loop() {
+  float t = dht.readTemperature();
+  float h = dht.readHumidity();
+  int moistureValue = analogRead(moisturePin);
+  int gasValue = analogRead(gasPin);
+  int pHValue = analogRead(pHPin);
+
+  if (isnan(t) || isnan(h)) {
+    Serial.println("No data available");
+  } else {
+    Serial.print("Temperature: ");
+    Serial.print(t);
+    Serial.print(" °C");
+    Serial.print("   Humidity: ");
+    Serial.print(h);
+    Serial.print(" %");
+  }
+  Serial.print("   Moisture: ");
+  Serial.print(moistureValue);
+  Serial.print("   Gas: ");
+  Serial.print(gasValue);
+  Serial.print("   pH: ");
+  Serial.println(pHValue);
+
+  
+
+  delay(100);  // Adjust the delay time according to your requirements
+}

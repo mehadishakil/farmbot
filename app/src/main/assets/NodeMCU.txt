@@ -1,0 +1,148 @@
+#include <ArduinoJson.h>
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+#include <ESP8266WebServer.h>
+#include <DHT.h>
+
+
+
+
+const char* ssid = "Farmbot";         // Replace with your desired access point SSID
+const char* password = "11223344"; // Replace with your desired access point password
+
+ESP8266WebServer server(80);
+
+
+
+
+
+// int moisture_signal = A0; 
+int Pin_D1 = 4;   // moisture
+int Pin_D2 = 5;   // dht
+int Pin_D3 = 6;   // ph
+int Pin_D4 = 7;   // air
+
+
+
+
+
+// defining data variables
+float moisture;
+float humidity;
+float ph;
+float air;
+
+
+
+
+void handleRoot() {
+  DynamicJsonDocument doc(64);
+  doc["sensorData"] = moisture;
+  doc["humidity"] = humidity;
+  doc["ph"] = ph;
+  doc["air"] = air;
+
+
+  String response;
+  serializeJson(doc, response);
+  
+  server.send(200, "application/json", response);
+}
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(Pin_D1, OUTPUT);
+  pinMode(Pin_D2, OUTPUT);
+  pinMode(Pin_D3, OUTPUT);
+  pinMode(Pin_D4, OUTPUT);
+
+  // connecting wifi
+  WiFi.softAP(ssid, password); // Set up NodeMCU as an access point
+
+  IPAddress IP = WiFi.softAPIP();
+  Serial.print("Access Point IP address: ");
+  Serial.println(IP);
+
+  server.on("/GetMoisture", handleRoot);
+  server.begin();
+  Serial.println("Server started!");
+
+
+  server.on("/GetDHT", handleRoot);
+  server.begin();
+  Serial.println("Server started!");
+
+
+  server.on("/GetPH", handleRoot);
+  server.begin();
+  Serial.println("Server started!");
+
+  server.on("/GetAir", handleRoot);
+  server.begin();
+  Serial.println("Server started!");
+
+}
+
+
+// moisture
+int analogRead1() {
+  digitalWrite(Pin_D1, HIGH); // Turn D1 On
+  digitalWrite(Pin_D2, LOW);  // Turn D2 Off
+  digitalWrite(Pin_D3, LOW);  // Turn D3 Off
+  digitalWrite(Pin_D4, LOW);  // Turn D4 Off
+  return analogRead(A0);
+}
+
+// dht
+int analogRead2() {
+  digitalWrite(Pin_D1, LOW);  // Turn D1 Off
+  digitalWrite(Pin_D2, HIGH); // Turn D2 On
+  digitalWrite(Pin_D3, LOW);  // Turn D3 Off
+  digitalWrite(Pin_D4, LOW);  // Turn D4 Off
+  return analogRead(A0);
+}
+
+// ph
+int analogRead3() {
+  digitalWrite(Pin_D1, LOW);  // Turn D1 Off
+  digitalWrite(Pin_D2, LOW);  // Turn D2 Off
+  digitalWrite(Pin_D3, HIGH); // Turn D3 On
+  digitalWrite(Pin_D4, LOW);  // Turn D4 Off
+  return analogRead(A0);
+}
+
+// air
+int analogRead4() {
+  digitalWrite(Pin_D1, LOW);  // Turn D1 Off
+  digitalWrite(Pin_D2, LOW);  // Turn D2 Off
+  digitalWrite(Pin_D3, LOW);  // Turn D3 Off
+  digitalWrite(Pin_D4, HIGH); // Turn D4 On
+  return analogRead(A0);
+}
+
+
+
+
+void loop() {
+  server.handleClient();
+
+  // moisture = analogRead (moisture_signal );
+  moisture = analogRead1(); // Read analog value from the first sensor
+  delay(200);
+  humidity = analogRead2(); // Read analog value from the second sensor
+  delay(200);
+  ph = analogRead3(); // Read analog value from the third sensor
+  delay(200);
+  air = analogRead4(); // Read analog value from the fourth sensor
+  delay(200);
+
+
+  Serial.print("Moisture: ");
+  Serial.println(moisture);
+  Serial.print("Humidity: ");
+  Serial.println(humidity);
+  Serial.print("pH: ");
+  Serial.println(ph);
+  Serial.print("Air Quality: ");
+  Serial.println(air);
+}
