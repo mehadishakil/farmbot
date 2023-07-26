@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Farmbot</string>
+    <string name="cool_season_crops">Cool-Season Crops (e.g., lettuce, spinach, peas, broccoli):</string>
+    <string name="cool_season_crops_temperature">• Germination: 40°F to 75°F (4°C to 24°C) \n• Optimum Growth: 55°F to 75°F (13°C to 24°C)\n• Flowering: 55°F to 75°F (13°C to 24°C)</string>
+    <string name="warm_season_crops">Warm-Season Crops (e.g., tomatoes, corn, peppers, cucumbers):</string>
+    <string name="warm_season_crops_temperature">• Germination: 60°F to 95°F (15°C to 35°C)\n• Optimum Growth: 70°F to 85°F (21°C to 29°C)\n• Flowering: 70°F to 85°F (21°C to 29°C)\n• Fruit Development: 75°F to 95°F (24°C to 35°C)</string>
+    <string name="tropical_crops">Tropical Crops (e.g., bananas, mangoes, pineapples):</string>
+    <string name="tropical_crops_temperature">• Germination: 70°F to 95°F (21°C to 35°C)\n• Optimum Growth: 75°F to 95°F (24°C to 35°C)</string>
+    <string name="root_crops">Root Crops (e.g., potatoes, carrots, radishes):</string>
+    <string name="root_crops_temperature">• Germination: 45°F to 85°F (7°C to 29°C) \n• Optimum Growth: 60°F to 80°F (15°C to 27°C)</string>
+    <string name="cereal_crops">Cereal Crops (e.g., wheat, rice, oats, barley):</string>
+    <string name="cereal_crops_temperature">• Germination: 40°F to 85°F (4°C to 29°C)\n• Optimum Growth: 65°F to 75°F (18°C to 24°C)</string>
+    <string name="fruit_trees">Fruit Trees (e.g., apple, citrus, peach):</string>
+    <string name="fruit_trees_temperature">• Optimum Growth (During Active Growth Period): 65°F to 85°F (18°C to 29°C)\n• Rest Period (Dormancy): Chilling requirement varies widely depending on the species and variety.</string>
+    <string name="grapes">Grapes:</string>
+    <string name="grapes_temperature">• Budbreak (Spring): 50°F to 70°F (10°C to 21°C)\n• Flowering: 60°F to 80°F (15°C to 27°C)\n• Fruit Set: 70°F to 90°F (21°C to 32°C)</string>
+</resources>
