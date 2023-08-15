@@ -1,5 +1,6 @@
 package com.example.farmbot;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,10 +14,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    CardView tempCard, humidCard, moistCard, pHCard, gasCard;
     TextView temperature, humidity, moisture, ph, air;
     Button refreshBtn;
-    String value;
+    String value, temperatureData="", humidityData="", moistureData="", phData="", gasData="";
     RetrofitClientInstance retrofitClientInstance = new RetrofitClientInstance();
     NodeMCUApiService nodeMCUApiService = retrofitClientInstance.getApiService();
 
@@ -32,6 +34,18 @@ public class MainActivity extends AppCompatActivity {
         air = findViewById(R.id.GasData);
         refreshBtn = findViewById(R.id.refreshID);
         humidity = findViewById(R.id.HumidityData);
+
+        tempCard = findViewById(R.id.Id_card_Temperature);
+        humidCard = findViewById(R.id.Id_card_DHT);
+        moistCard = findViewById(R.id.Id_card_Moisture);
+        pHCard = findViewById(R.id.Id_card_PH);
+        gasCard = findViewById(R.id.Id_card_Air);
+        tempCard.setOnClickListener(this);
+        humidCard.setOnClickListener(this);
+        moistCard.setOnClickListener(this);
+        pHCard.setOnClickListener(this);
+        gasCard.setOnClickListener(this);
+
 
 
         refreshBtn.setOnClickListener(new View.OnClickListener() {
@@ -60,12 +74,27 @@ public class MainActivity extends AppCompatActivity {
                         ModelClass data = response.body();
                         value = data.getSensorData();
                         if (value != null) {
-                            String str2[] = value.split("\\s");
-                            temperature.setText(str2[0]);
-                            humidity.setText(str2[1]);
-                            moisture.setText(str2[2]);
-                            air.setText(str2[3]);
-                            ph.setText(str2[4]);
+                            String str[] = value.split("\\s");
+
+
+                            temperatureData = str[0];
+                            humidityData = str[1] + " %";
+
+                            String getMositure = str[2];
+                            double miostureSensorAnalog = Double.parseDouble(getMositure);
+                            double moisturePercentage = ( 100 - ( (miostureSensorAnalog / 1023.00) * 100 ) );
+                            moistureData = String.format("%.2f %%", moisturePercentage);
+
+
+                            gasData = str[3];
+                            phData = str[4];
+
+                            temperature.setText(str[0]);
+                            humidity.setText(humidityData);
+                            moisture.setText(moistureData);
+                            air.setText(str[3]);
+                            ph.setText(str[4]);
+
                         }
                     } else {
                         Toast.makeText(MainActivity.this, "No data received", Toast.LENGTH_SHORT).show();
@@ -87,4 +116,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.Id_card_Temperature:
+            {
+                Intent intent = new Intent(this, TempRecommendation.class);
+                intent.putExtra("tempData", temperatureData);
+                startActivity(intent);
+                break;
+            }
+            case R.id.Id_card_DHT:
+            {
+                Intent intent = new Intent(this, HumidityRecommendation.class);
+                intent.putExtra("humData", humidityData);
+                startActivity(intent);
+                break;
+            }
+            case R.id.Id_card_Moisture:
+            {
+                Intent intent = new Intent(this, MoistureRecommendation.class);
+                intent.putExtra("moisData", moistureData);
+                startActivity(intent);
+                break;
+            }
+            case R.id.Id_card_PH:
+            {
+                Intent intent = new Intent(this, pHRecommendation.class);
+                intent.putExtra("phData", phData);
+                startActivity(intent);
+                break;
+            }
+            case R.id.Id_card_Air:
+            {
+//                Intent intent = new Intent(this, TempRecommendation.class);
+//                intent.putExtra("tempData", temperatureData);
+//                startActivity(intent);
+                break;
+            }
+        }
+    }
 }

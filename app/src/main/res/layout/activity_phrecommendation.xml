@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:stickyHeader="@+id/title"
-    tools:context="com.example.farmbot.TempRecommendation">
+    tools:context=".pHRecommendation">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,16 +14,16 @@
         android:orientation="vertical">
 
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottie_temperature"
+            android:id="@+id/lottie_pH"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@color/white"
+            android:background="#003470"
             android:scaleType="fitCenter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
-            app:lottie_fileName="temperature.json"
+            app:lottie_fileName="pH.json"
             app:lottie_loop="true"
             app:lottie_speed="1"
             tools:ignore="ImageContrastCheck" />
@@ -44,10 +44,10 @@
             android:padding="15dp">
 
             <TextView
-                android:id="@+id/id_display_temperature"
+                android:id="@+id/id_display_pH"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="87.8℉ / 31℃"
+                android:text="7.0"
                 android:textColor="#DD0000"
                 android:textSize="25sp"
                 android:textStyle="bold"
@@ -77,14 +77,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
                 android:textSize="15sp"
-                android:text="@string/cool_season_crops"
+                android:text="@string/acidic_soil"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cool_season_crops_temperature"
+                android:text="@string/acidic_soil_data"
                 android:textColor="#474747"
                 android:textStyle="normal" />
         </LinearLayout>
@@ -105,14 +105,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
                 android:textSize="15sp"
-                android:text="@string/warm_season_crops"
+                android:text="@string/slightly_acidic_to_neutral_soil"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/warm_season_crops_temperature"
+                android:text="@string/slightly_acidic_to_neutral_soil_data"
                 android:textColor="#474747"
                 android:textStyle="normal" />
         </LinearLayout>
@@ -133,72 +133,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
                 android:textSize="15sp"
-                android:text="@string/tropical_crops"
+                android:text="@string/slightly_alkaline_soil"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tropical_crops_temperature"
-                android:textColor="#474747"
-                android:textStyle="normal" />
-        </LinearLayout>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:background="@android:color/darker_gray" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:textSize="15sp"
-                android:text="@string/root_crops"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/root_crops_temperature"
-                android:textColor="#474747"
-                android:textStyle="normal" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.1dp"
-            android:background="@android:color/darker_gray" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp"
-                android:textSize="15sp"
-                android:text="@string/cereal_crops"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cereal_crops_temperature"
+                android:text="@string/slightly_alkaline_soil_data"
                 android:textColor="#474747"
                 android:textStyle="normal" />
         </LinearLayout>
@@ -221,19 +163,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
                 android:textSize="15sp"
-                android:text="@string/fruit_trees"
+                android:text="@string/moderately_alkaline_soil"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fruit_trees_temperature"
+                android:text="@string/moderately_alkaline_soil_data"
                 android:textColor="#474747"
                 android:textStyle="normal" />
         </LinearLayout>
-
-
 
         <View
             android:layout_width="match_parent"
@@ -251,14 +191,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
                 android:textSize="15sp"
-                android:text="@string/grapes"
+                android:text="@string/highly_alkaline_soil"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/grapes_temperature"
+                android:text="@string/highly_alkaline_soil_data"
                 android:textColor="#474747"
                 android:textStyle="normal" />
         </LinearLayout>
