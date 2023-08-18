@@ -18,19 +18,10 @@
         android:theme="@style/Theme.Farmbot"
         tools:targetApi="31">
         <activity
-            android:name=".pHRecommendation"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".MoistureRecommendation"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".HumidityRecommendation"
+            android:name=".GasRecommendation"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name=".Signup"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -38,11 +29,26 @@
         </activity>
         <activity
             android:name=".Login"
-            android:exported="false">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".pHRecommendation"
+            android:exported="true" />
+        <activity
+            android:name=".MoistureRecommendation"
+            android:exported="true" />
+        <activity
+            android:name=".HumidityRecommendation"
+            android:exported="false" />
         <activity
             android:name=".TempRecommendation"
             android:exported="true">
@@ -59,10 +65,9 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
     </application>
 

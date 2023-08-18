@@ -33,7 +33,7 @@ public class MoistureRecommendation extends AppCompatActivity {
             moisture = intent.getStringExtra("moisData");
         }
 
-        displayMoisture.setText(moisture);
+        displayMoisture.setText(moisture + " %");
 
     }
 }

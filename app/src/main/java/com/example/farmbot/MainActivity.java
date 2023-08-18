@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView tempCard, humidCard, moistCard, pHCard, gasCard;
     TextView temperature, humidity, moisture, ph, air;
     Button refreshBtn;
-    String value, temperatureData="", humidityData="", moistureData="", phData="", gasData="";
+    String value, temperatureData="0", humidityData="_", moistureData="_", phData="_", gasData="_";
     RetrofitClientInstance retrofitClientInstance = new RetrofitClientInstance();
     NodeMCUApiService nodeMCUApiService = retrofitClientInstance.getApiService();
 
@@ -73,29 +73,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (response.isSuccessful() && response.body() != null) {
                         ModelClass data = response.body();
                         value = data.getSensorData();
-                        if (value != null) {
-                            String str[] = value.split("\\s");
+
+                        try{
+                            Toast.makeText(MainActivity.this, " "+value, Toast.LENGTH_SHORT).show();
+                            if (value != null) {
+                                String str[] = value.split("\\s");
 
 
-                            temperatureData = str[0];
-                            humidityData = str[1] + " %";
+                                temperatureData = str[0];
+                                humidityData = str[1] + " %";
 
-                            String getMositure = str[2];
-                            double miostureSensorAnalog = Double.parseDouble(getMositure);
-                            double moisturePercentage = ( 100 - ( (miostureSensorAnalog / 1023.00) * 100 ) );
-                            moistureData = String.format("%.2f %%", moisturePercentage);
+                                String getMositure = str[2];
+                                double miostureSensorAnalog = Double.parseDouble(getMositure);
+                                double moisturePercentage = ( 100 - ( (miostureSensorAnalog / 1023.00) * 100 ) );
+                                moistureData = String.format("%.2f %%", moisturePercentage);
 
 
-                            gasData = str[3];
-                            phData = str[4];
+                                gasData = str[3];
+                                phData = str[4];
 
-                            temperature.setText(str[0]);
-                            humidity.setText(humidityData);
-                            moisture.setText(moistureData);
-                            air.setText(str[3]);
-                            ph.setText(str[4]);
+                                temperature.setText(str[0]);
+                                humidity.setText(humidityData);
+                                moisture.setText(moistureData);
+                                air.setText(str[3]);
+                                ph.setText(str[4]);
 
+                            }
+                        }catch (Exception e){
+                            Toast.makeText(MainActivity.this, " "+e, Toast.LENGTH_SHORT).show();
                         }
+
+
                     } else {
                         Toast.makeText(MainActivity.this, "No data received", Toast.LENGTH_SHORT).show();
                     }
@@ -149,9 +157,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.Id_card_Air:
             {
-//                Intent intent = new Intent(this, TempRecommendation.class);
-//                intent.putExtra("tempData", temperatureData);
-//                startActivity(intent);
+                Intent intent = new Intent(this, GasRecommendation.class);
+                intent.putExtra("gasData", gasData);
+                startActivity(intent);
                 break;
             }
         }

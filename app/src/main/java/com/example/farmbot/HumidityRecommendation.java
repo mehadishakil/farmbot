@@ -34,7 +34,7 @@ public class HumidityRecommendation extends AppCompatActivity {
              humidity = intent.getStringExtra("humData");
         }
 
-        displayHumidity.setText(humidity);
+        displayHumidity.setText(humidity + " %");
 
 
 

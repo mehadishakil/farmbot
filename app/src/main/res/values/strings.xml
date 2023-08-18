@@ -50,4 +50,12 @@
     <string name="moderately_alkaline_soil_data">• pH range: (7.5 – 8.5) \n• Plants that Thrive: Certain grasses, asparagus, and other plants that tolerate alkaline conditions. \n• Nutrient Availability: Availability of some micronutrients might decrease. \n• Management: Some crops can tolerate this range, but it\'s important to monitor nutrient availability and address potential deficiencies.</string>
     <string name="highly_alkaline_soil">Highly Alkaline Soil</string>
     <string name="highly_alkaline_soil_data">• pH range: (above 8.5) \n• Plants that Thrive: Few crops thrive in highly alkaline soils, but some desert plants can adapt. \n• Nutrient Availability: Many nutrients become less available, leading to deficiencies. \n• Management: Amend soil to lower pH if growing crops not adapted to highly alkaline conditions. Choose tolerant plants or consider container gardening.</string>
+    <string name="gas_range_0_to_100">Gas Range: (0 to 100)</string>
+    <string name="gas_range_0_to_100_data">• Status : Safe \n• Gas levels are within safe limits for agricultural environments. No immediate action is required.</string>
+    <string name="gas_range_100_to_300">Gas Range: (100 to 300)</string>
+    <string name="gas_range_100_to_300_data">• Status : Moderate \n• Gas levels are moderately elevated. Ensure proper ventilation to minimize accumulation. Monitor crop health for any adverse effects.</string>
+    <string name="gas_range_300_to_600">Gas Range: (300 to 600)</string>
+    <string name="gas_range_300_to_600_data">• Status : Elevated \n• Gas levels are elevated. It\'s important to improve ventilation and ensure proper air exchange. Monitor crops closely for signs of stress.</string>
+    <string name="gas_range_600_to_1000">Gas Range: (600 to 1000)</string>
+    <string name="note">Note : Consistently monitor gas levels to ensure a healthy agricultural environment.</string>
 </resources>

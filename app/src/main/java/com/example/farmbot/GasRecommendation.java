@@ -9,31 +9,32 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 
-public class pHRecommendation extends AppCompatActivity {
+public class GasRecommendation extends AppCompatActivity {
 
-    String pH;
-    TextView displaypH;
+    String gas;
+    TextView displayGas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrecommendation);
+        setContentView(R.layout.activity_gas_recommendation);
+
 
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        LottieAnimationView lottieAnimationView = findViewById(R.id.lottie_pH);
+        LottieAnimationView lottieAnimationView = findViewById(R.id.lottie_humidity);
         lottieAnimationView.playAnimation();
 
-        displaypH = findViewById(R.id.id_display_pH);
+        displayGas = findViewById(R.id.id_display_gas);
 
 
         Intent intent = getIntent();
         if(intent != null) {
-            pH = intent.getStringExtra("phData");
+            gas = intent.getStringExtra("gasData");
         }
 
-        displaypH.setText("pH = " + pH);
+        displayGas.setText(gas+" ppm");
 
     }
 }
