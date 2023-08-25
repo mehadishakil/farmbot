@@ -75,12 +75,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         value = data.getSensorData();
 
                         try{
-                            Toast.makeText(MainActivity.this, " "+value, Toast.LENGTH_SHORT).show();
+                            // Toast.makeText(MainActivity.this, " "+value, Toast.LENGTH_SHORT).show();
                             if (value != null) {
                                 String str[] = value.split("\\s");
 
 
-                                temperatureData = str[0];
+                                temperatureData = str[0] + " ℃";
                                 humidityData = str[1] + " %";
 
                                 String getMositure = str[2];
@@ -92,10 +92,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 gasData = str[3];
                                 phData = str[4];
 
-                                temperature.setText(str[0]);
+                                temperature.setText(temperatureData);
                                 humidity.setText(humidityData);
                                 moisture.setText(moistureData);
-                                air.setText(str[3]);
+                                air.setText(str[3] + " ppm");
                                 ph.setText(str[4]);
 
                             }

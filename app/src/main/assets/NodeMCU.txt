@@ -4,8 +4,8 @@
 #include <ESP8266WebServer.h>
 
 
-const char* ssid = "Farmbot";         // Replace with your desired access point SSID
-const char* password = "11223344"; // Replace with your desired access point password
+const char* ssid = "Farmbot";
+const char* password = "11223344"; 
 
 ESP8266WebServer server(80);
 
