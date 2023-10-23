@@ -28,7 +28,7 @@ The key features of Farmbot include:
 
 ## Screenshots
 
-![Screenshot_20231023-134229](https://github.com/mehadishakil/farmbot/assets/112794443/544209e0-3b33-4f29-9bb4-560401052bf5)
+![Group 19](https://github.com/mehadishakil/farmbot/assets/112794443/4f6fbc56-5ee6-4de0-8123-96e07eb272c6)
 
 ## Usage
 
