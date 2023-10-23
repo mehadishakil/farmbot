@@ -4,7 +4,7 @@ An Android Application for IoT-Based Wireless Agricultural Robot
 
 ## Introduction
 
-Farmbot is an innovative Android application designed to enhance traditional farming techniques and improve crop production through IoT-based wireless agricultural robots. This project aims to aid farmers by providing real-time data on moisture levels, soil pH, temperature, humidity, and the presence of flammable gases across different areas of the farm. The application connects to a radio frequency remote-controlled robot equipped with Arduino microcontrollers and ultrasonic sensors.
+Farmbot is an innovative Android application designed to enhance traditional farming techniques and improve crop production through IoT-based wireless agricultural robots. This project aims to aid farmers by providing real-time data on moisture levels, soil pH, temperature, humidity, and the presence of flammable gases across different farm areas. The application connects to a radio frequency remote-controlled robot equipped with Arduino microcontrollers and ultrasonic sensors.
 
 The key features of Farmbot include:
 - Real-time data collection and display on a mobile app.
@@ -43,7 +43,7 @@ To use Farmbot, follow these steps:
 5. Connect to the NodeMCU's WiFi network (FARMBOT).
 6. Access real-time sensor data and receive recommendations for farming decisions.
 
-To see the Arduino code for this robot check this folder -  app/src/main/assets
+To get the Arduino code for this robot, checkout this folder -  app/src/main/assets
 
 ## Contribution
 
