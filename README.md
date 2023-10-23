@@ -30,6 +30,9 @@ The key features of Farmbot include:
 
 ![Group 19](https://github.com/mehadishakil/farmbot/assets/112794443/4f6fbc56-5ee6-4de0-8123-96e07eb272c6)
 
+![robot](https://github.com/mehadishakil/farmbot/assets/112794443/bd72e538-7e90-4323-8d63-37ee082fed7e)
+
+
 ## Usage
 
 To use Farmbot, follow these steps:
