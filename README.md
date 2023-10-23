@@ -28,11 +28,7 @@ The key features of Farmbot include:
 
 ## Screenshots
 
-![Login Screen](screenshots/login_screen.png)
-*Login Screen: Secure login for authorized users.*
-
-![Data Display](screenshots/data_display.png)
-*Data Display: Real-time sensor data for temperature, humidity, moisture, pH, and gas values.*
+![Screenshot_20231023-134229](https://github.com/mehadishakil/farmbot/assets/112794443/544209e0-3b33-4f29-9bb4-560401052bf5)
 
 ## Usage
 
