@@ -43,6 +43,8 @@ To use Farmbot, follow these steps:
 5. Connect to the NodeMCU's WiFi network (FARMBOT).
 6. Access real-time sensor data and receive recommendations for farming decisions.
 
+To see the Arduino code for this robot check this folder -  app/src/main/assets
+
 ## Contribution
 
 Feel free to contribute to this project.
