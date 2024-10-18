@@ -32,6 +32,9 @@ The key features of Farmbot include:
 
 ![robot](https://github.com/mehadishakil/farmbot/assets/112794443/bd72e538-7e90-4323-8d63-37ee082fed7e)
 
+![WhatsApp Image 2024-10-18 at 3 19 57 PM](https://github.com/user-attachments/assets/89ea35c8-29f4-4f76-bb6e-69914e1008af)
+
+![WhatsApp Image 2024-10-18 at 3 20 19 PM](https://github.com/user-attachments/assets/787e899b-f672-4a31-a7f1-147625bbb02c)
 
 ## Usage
 
