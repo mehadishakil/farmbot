@@ -36,6 +36,8 @@ The key features of Farmbot include:
 
 ![WhatsApp Image 2024-10-18 at 3 20 19 PM](https://github.com/user-attachments/assets/787e899b-f672-4a31-a7f1-147625bbb02c)
 
+https://youtu.be/aVUCBegaj3o
+
 ## Usage
 
 To use Farmbot, follow these steps:
